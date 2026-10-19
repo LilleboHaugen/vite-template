@@ -18,27 +18,33 @@ export const App: FC = () => {
   return (
     <ToggleGroup variant="outline" value={value} onValueChange={(theme) => handleChange(theme[0])}>
       <Tooltip>
-        <TooltipTrigger>
-          <ToggleGroupItem value="light" aria-label="Toggle light">
-            <Sun />
-          </ToggleGroupItem>
-        </TooltipTrigger>
+        <TooltipTrigger
+          render={
+            <ToggleGroupItem value="light" aria-label="Toggle light">
+              <Sun />
+            </ToggleGroupItem>
+          }
+        />
         <TooltipContent>Light mode</TooltipContent>
       </Tooltip>
       <Tooltip>
-        <TooltipTrigger>
-          <ToggleGroupItem value="dark" aria-label="Toggle dark">
-            <Moon />
-          </ToggleGroupItem>
-        </TooltipTrigger>
+        <TooltipTrigger
+          render={
+            <ToggleGroupItem value="dark" aria-label="Toggle dark">
+              <Moon />
+            </ToggleGroupItem>
+          }
+        />
         <TooltipContent>Dark mode</TooltipContent>
       </Tooltip>
       <Tooltip>
-        <TooltipTrigger>
-          <ToggleGroupItem value="system" aria-label="Match system">
-            <Monitor />
-          </ToggleGroupItem>
-        </TooltipTrigger>
+        <TooltipTrigger
+          render={
+            <ToggleGroupItem value="system" aria-label="Match system">
+              <Monitor />
+            </ToggleGroupItem>
+          }
+        />
         <TooltipContent>Match system</TooltipContent>
       </Tooltip>
     </ToggleGroup>
