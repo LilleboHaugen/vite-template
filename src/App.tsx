@@ -2,6 +2,7 @@ import { Monitor, Moon, Sun } from "lucide-react"
 import { useState, type FC } from "react"
 import { useTheme, type Theme } from "@/components/theme-provider"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 
 export const App: FC = () => {
   const { theme, setTheme } = useTheme()
@@ -16,15 +17,30 @@ export const App: FC = () => {
 
   return (
     <ToggleGroup variant="outline" value={value} onValueChange={(theme) => handleChange(theme[0])}>
-      <ToggleGroupItem value="light" aria-label="Toggle light">
-        <Sun />
-      </ToggleGroupItem>
-      <ToggleGroupItem value="dark" aria-label="Toggle dark">
-        <Moon />
-      </ToggleGroupItem>
-      <ToggleGroupItem value="system" aria-label="Toggle system">
-        <Monitor />
-      </ToggleGroupItem>
+      <Tooltip>
+        <TooltipTrigger>
+          <ToggleGroupItem value="light" aria-label="Toggle light">
+            <Sun />
+          </ToggleGroupItem>
+        </TooltipTrigger>
+        <TooltipContent>Light mode</TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger>
+          <ToggleGroupItem value="dark" aria-label="Toggle dark">
+            <Moon />
+          </ToggleGroupItem>
+        </TooltipTrigger>
+        <TooltipContent>Dark mode</TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger>
+          <ToggleGroupItem value="system" aria-label="Match system">
+            <Monitor />
+          </ToggleGroupItem>
+        </TooltipTrigger>
+        <TooltipContent>Match system</TooltipContent>
+      </Tooltip>
     </ToggleGroup>
   )
 }
