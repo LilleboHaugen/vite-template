@@ -25,7 +25,7 @@ export const App: FC = () => {
             </ToggleGroupItem>
           }
         />
-        <TooltipContent>Light mode</TooltipContent>
+        <TooltipContent sideOffset={8}>Light mode</TooltipContent>
       </Tooltip>
       <Tooltip>
         <TooltipTrigger
@@ -35,7 +35,7 @@ export const App: FC = () => {
             </ToggleGroupItem>
           }
         />
-        <TooltipContent>Dark mode</TooltipContent>
+        <TooltipContent sideOffset={8}>Dark mode</TooltipContent>
       </Tooltip>
       <Tooltip>
         <TooltipTrigger
@@ -45,7 +45,7 @@ export const App: FC = () => {
             </ToggleGroupItem>
           }
         />
-        <TooltipContent>Match system</TooltipContent>
+        <TooltipContent sideOffset={8}>Match system</TooltipContent>
       </Tooltip>
     </ToggleGroup>
   )
