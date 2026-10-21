@@ -3,7 +3,7 @@ import { type FC } from "react"
 import { type Theme } from "@/components/theme-provider"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-import { useTheme } from "@/components/useTheme"
+import { useTheme } from "@/hooks/use-theme"
 
 export const App: FC = () => {
   const { theme, setTheme } = useTheme()
