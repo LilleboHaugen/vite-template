@@ -1,9 +1,8 @@
 import { Monitor, Moon, Sun } from "lucide-react"
 import { type FC } from "react"
-import { type Theme } from "@/components/theme-provider"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-import { useTheme } from "@/hooks/use-theme"
+import { useTheme, type Theme } from "@/components/theme-provider"
 
 export const App: FC = () => {
   const { theme, setTheme } = useTheme()

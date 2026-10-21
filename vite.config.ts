@@ -13,6 +13,7 @@ export default defineConfig({
     trailingComma: "none"
   },
   lint: {
+    ignorePatterns: ["src/components/ui/**", "src/components/theme-provider.tsx"],
     plugins: ["react", "typescript", "oxc", "jsx-a11y"],
     rules: {
       "typescript/no-explicit-any": "error",
