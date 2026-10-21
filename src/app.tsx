@@ -2,14 +2,14 @@ import { Monitor, Moon, Sun } from "lucide-react"
 import { type FC } from "react"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-import { useTheme, type Theme } from "@/components/theme-provider"
+import { isTheme, useTheme } from "@/components/theme-provider"
 
 export const App: FC = () => {
   const { theme, setTheme } = useTheme()
 
-  const handleChange = (theme: string | undefined) => {
-    if (theme) {
-      setTheme(theme as Theme)
+  const handleChange = (value: string | undefined) => {
+    if (value && isTheme(value)) {
+      setTheme(value)
     }
   }
 
@@ -17,7 +17,7 @@ export const App: FC = () => {
     <ToggleGroup
       variant="outline"
       value={[theme]}
-      onValueChange={(theme) => handleChange(theme[0])}
+      onValueChange={(values) => handleChange(values[0])}
     >
       <Tooltip>
         <TooltipTrigger

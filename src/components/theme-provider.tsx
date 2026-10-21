@@ -20,7 +20,7 @@ const THEME_VALUES: Theme[] = ["dark", "light", "system"]
 
 const ThemeProviderContext = React.createContext<ThemeProviderState | undefined>(undefined)
 
-function isTheme(value: string | null): value is Theme {
+export function isTheme(value: string | null): value is Theme {
   if (value === null) {
     return false
   }
